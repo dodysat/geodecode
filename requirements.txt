@@ -1,0 +1,8 @@
+fastapi==0.109.0
+uvicorn==0.27.0
+geopandas==0.14.2
+shapely==2.0.2
+pyogrio==0.7.2
+requests==2.31.0
+pandas==2.2.0
+python-multipart==0.0.6

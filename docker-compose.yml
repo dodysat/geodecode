@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  geodecode:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data:/app/data
+    environment:
+      - GEOJSON_PATH=data/indonesia_villages.geojson
+    restart: always
