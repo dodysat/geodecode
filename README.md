@@ -4,10 +4,11 @@ A high-performance FastAPI service that converts geographic coordinates (latitud
 
 ## Features
 
-- **Accurate Geocoding**: Uses village-level (Level 4) boundary data from Kemendagri/BPS.
-- **Hierarchical Breakdown**: Returns codes for Province, Regency (Kabupaten/Kota), District (Kecamatan), and Village (Desa/Kelurahan).
-- **Fast Queries**: Utilizes `geopandas` with spatial indexing (R-Tree) for sub-second lookups.
-- **Dockerized**: Easy deployment with Docker and Docker Compose.
+- **Accurate Geocoding**: Uses village-level (Level 4) boundary data.
+- **Official Codes Integration**: Automatically fetches and maps official Kemendagri codes from `cahyadsn/wilayah`.
+- **Hierarchical Breakdown**: Returns codes for Province, Regency, District, and Village.
+- **Fast Queries**: Utilizes `geopandas` with spatial indexing for sub-second lookups.
+- **Dockerized**: Easy deployment on port **2903**.
 
 ## Administrative Code Format (Example)
 Given coordinate `-7.892473, 110.719908`:
@@ -47,7 +48,7 @@ Given coordinate `-7.892473, 110.719908`:
 
 **Example:**
 ```bash
-curl "http://localhost:8000/convert?latitude=-7.892473&longitude=110.719908"
+curl "http://localhost:2903/convert?latitude=-7.892473&longitude=110.719908"
 ```
 
 **Response:**

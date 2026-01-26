@@ -3,7 +3,7 @@ import json
 import sys
 
 def test_conversion(lat, lon):
-    url = f"http://localhost:8000/convert?latitude={lat}&longitude={lon}"
+    url = f"http://localhost:2903/convert?latitude={lat}&longitude={lon}"
     print(f"Testing conversion for: {lat}, {lon}")
     try:
         response = requests.get(url)

@@ -7,13 +7,14 @@ app = FastAPI(title="Indonesia GeoDecode Service")
 
 # Initialize GeoDecoder
 DATA_PATH = os.getenv("GEOJSON_PATH", "data/indonesia_villages.geojson")
+CODES_PATH = os.getenv("CODES_PATH", "data/kode_wilayah.json")
 decoder = None
 
 @app.on_event("startup")
 async def startup_event():
     global decoder
     if os.path.exists(DATA_PATH):
-        decoder = GeoDecoder(DATA_PATH)
+        decoder = GeoDecoder(DATA_PATH, CODES_PATH)
     else:
         print(f"WARNING: Data not found at {DATA_PATH}. Please run download_data.py first.")
 

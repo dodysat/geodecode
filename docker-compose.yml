@@ -4,7 +4,7 @@ services:
   geodecode:
     build: .
     ports:
-      - "8000:8000"
+      - "2903:8000"
     volumes:
       - ./data:/app/data
     environment:
