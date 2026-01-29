@@ -1,9 +1,19 @@
 from fastapi import FastAPI, HTTPException, Query
+from fastapi.middleware.cors import CORSMiddleware
 from geodecoder import GeoDecoder
 import os
 import uvicorn
 
 app = FastAPI(title="Indonesia GeoDecode Service")
+
+# Add CORS middleware
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Allows all origins
+    allow_credentials=True,
+    allow_methods=["*"],  # Allows all methods
+    allow_headers=["*"],  # Allows all headers
+)
 
 # Initialize GeoDecoder
 DATA_PATH = os.getenv("GEOJSON_PATH", "data/indonesia_villages.geojson")
